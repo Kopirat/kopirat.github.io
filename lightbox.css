@@ -1,0 +1,45 @@
+/* Lighbox */
+
+.thumbnail {
+  margin: .5em;
+  max-height: 15em;
+}
+
+.lightbox {
+	background: black;
+	display: none;
+	left: 0;
+	height: 100%;
+	margin: 0;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+.lightbox figure {
+	height: 100%;
+	margin: 0;
+	max-width: 100%;
+	position: relative;
+}
+
+.lightbox img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.lightbox figcaption {
+	background: rgba(0, 0, 0, 0.8);
+	bottom: 3%;
+	color: #fff;
+	padding: .5em;
+	position: absolute;
+	width: 100%;
+}
+
+.lightbox:target {
+	display: block;
+	outline: none;
+}

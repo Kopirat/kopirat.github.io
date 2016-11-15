@@ -1,16 +1,79 @@
 /* Main CSS */
 
-body {
-	background: #232323;
-	color: #f1f1f1;
-	font-size: 1.5em;
-	margin: 3em;
+* {
+	box-sizing: border-box;
 }
 
-a {
-	color: #d1d1d1;
+::selection {
+	background: #eecc88;
+	color: white;
+}
+
+html {
+	background: #fafafa;
+	color: #333333;
+	font-family: Georgia;
+}
+
+body {
+	margin: 0 0 0 14em;
+}
+
+/* Nav */
+.main-nav {
+	background: #232323;
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 3em 0;
+	position: fixed;
+	top: 0; left: 0; bottom: 0;
+	width: 14em;
+}
+.main-nav a {
+	color: #f1f1f1;
+	font-size: 1.2em;
+	margin: auto 0;
+	text-decoration: none;
+	transition: all linear .2s;
+}
+.main-nav a:not(:first-child) {
+	line-height: 4em;
+	padding-left: 1.5em;
+}
+.main-nav a:not(:first-child):hover {
+	box-shadow: rgba(255,255,255,.1) 15em 0 0 inset; 
+}
+#nav-logo {
+	padding-left: .4em;
+	transform: rotate(-4deg);
+	width: 90%;
+}
+
+/* Header */
+.main-header {
+	background: #444;
+	color: #f1f1f1;
+	padding: 2em;
+	width: 100%;
 }
 
 h1 {
-	font-size: 3em;
+	margin: 0;
+}
+
+.main-header a { color: #000}
+
+/* Main */
+main {
+	align-content: flex-start;
+	align-items: stretch;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 1em 0;
+}
+
+main p {
+	margin-left: 1em;
+	width: 100%;
 }
