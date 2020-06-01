@@ -1,79 +1,114 @@
 /* Main CSS */
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::selection {
-	background: #eecc88;
-	color: white;
+  background: #eecc88;
+  color: white;
 }
 
 html {
-	background: #fafafa;
-	color: #333333;
-	font-family: Georgia;
+  background: #fafafa;
+  color: #333333;
+  font-family: "Courier New", Courier, monospace;
 }
 
-body {
-	margin: 0 0 0 14em;
-}
+body { margin: 0 }
 
 /* Nav */
-.main-nav {
-	background: #232323;
-	display: flex;
-	flex-flow: column nowrap;
-	padding: 3em 0;
-	position: fixed;
-	top: 0; left: 0; bottom: 0;
-	width: 14em;
+nav {
+  background: #000;
+  display: flex;
+  flex-direction: column;
 }
-.main-nav a {
-	color: #f1f1f1;
-	font-size: 1.2em;
-	margin: auto 0;
-	text-decoration: none;
-	transition: all linear .2s;
+
+nav a {
+  border-bottom: solid 1px #333;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 3em;
+  text-decoration: none;
 }
-.main-nav a:not(:first-child) {
-	line-height: 4em;
-	padding-left: 1.5em;
+
+nav a:not(:first-child) {
+  display: none;
+  padding-left: 1em;
 }
-.main-nav a:not(:first-child):hover {
-	box-shadow: rgba(255,255,255,.1) 15em 0 0 inset; 
+
+nav a:first-child:before {
+  content: '☰';
+  font-size: 1.5em;
+  padding: .2em .7em;
+  position: absolute;
 }
+
 #nav-logo {
-	padding-left: .4em;
-	transform: rotate(-4deg);
-	width: 90%;
+  display: block;
+  margin: .5em auto;
+  transform: rotate(-4deg);
+  width: 6em;
 }
+
+#main-nav:target a {
+  display: flex;
+}
+
+@media only screen and (min-width: 300px) {}
 
 /* Header */
 .main-header {
-	background: #444;
-	color: #f1f1f1;
-	padding: 2em;
-	width: 100%;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    padding: 2em;
+    position: relative;
+    overflow: hidden;
 }
 
-h1 {
-	margin: 0;
+.main-header img {
+    filter: grayscale(100%) blur(2px);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: -1;
 }
 
-.main-header a { color: #000}
 
 /* Main */
+
+
 main {
-	align-content: flex-start;
-	align-items: stretch;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	padding: 1em 0;
+  align-content: flex-start;
+  align-items: stretch;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 1em 0;
 }
 
 main p {
-	margin-left: 1em;
-	width: 100%;
+  margin-left: 1em;
+  width: 100%;
+}
+
+
+/*Code Console*/
+pre.console:before{
+  content: '⬤ ⬤ ⬤';
+  color: #222;
+  background: #ccc;
+  padding: .5em .7em;
+  display: block;
+  border-radius: .5em .5em 0 0;
+}
+pre.console {
+  background: #000;
+  margin: 1em;
+  color: #0f0;
+  border-radius: 2em 2em .5em .5em;
+}
+
+code {
+  display: block;
+  padding: 1em;
 }
