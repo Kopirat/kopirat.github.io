@@ -5,13 +5,12 @@
 }
 
 ::selection {
-  background: #eecc88;
-  color: white;
+  background: white;
+  color: black;
 }
 
 html {
-  background: #fafafa;
-  color: #333333;
+  color: #333;
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -19,7 +18,7 @@ body { margin: 0 }
 
 /* Nav */
 nav {
-  background: #000;
+  background: black;
   display: flex;
   flex-direction: column;
 }
@@ -36,11 +35,20 @@ nav a:not(:first-child) {
   padding-left: 1em;
 }
 
-nav a:first-child:before {
-  content: '☰';
+nav a:first-child:before, nav a:first-child:after {
+  content: '▼';
   font-size: 1.5em;
   padding: .2em .7em;
   position: absolute;
+}
+nav a:first-child:after {
+    right: 0;
+    top: 0;
+}
+
+nav a:hover {
+    background: white;
+    color: black;
 }
 
 #nav-logo {
@@ -50,11 +58,9 @@ nav a:first-child:before {
   width: 6em;
 }
 
-#main-nav:target a {
+#main-nav:hover a {
   display: flex;
 }
-
-@media only screen and (min-width: 300px) {}
 
 /* Header */
 .main-header {
@@ -67,16 +73,16 @@ nav a:first-child:before {
 
 .main-header img {
     filter: grayscale(100%) blur(2px);
+    left: 0;
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    transform: scale(1.1); /* Fixes white border */
     width: 100%;
     z-index: -1;
 }
 
 
 /* Main */
-
-
 main {
   align-content: flex-start;
   align-items: stretch;
@@ -84,6 +90,7 @@ main {
   flex-flow: row wrap;
   justify-content: center;
   padding: 1em 0;
+    position: relative;
 }
 
 main p {
@@ -93,22 +100,30 @@ main p {
 
 
 /*Code Console*/
-pre.console:before{
-  content: '⬤ ⬤ ⬤';
-  color: #222;
-  background: #ccc;
-  padding: .5em .7em;
+.console {
+  background: black;
+  border-radius: .5em;
+  color: white;
   display: block;
-  border-radius: .5em .5em 0 0;
-}
-pre.console {
-  background: #000;
   margin: 1em;
-  color: #0f0;
-  border-radius: 2em 2em .5em .5em;
+  overflow: auto;
+  position: relative;
+}
+.console:before{
+  border-radius: .5em .5em 0 0;
+  content: 'Content';
+  display: block;
+  margin-bottom: 1em;
+  padding: .7em;
+  text-align: center;
+}
+.console:after{
+  content: '⬤ ⬤ ⬤';
+    position: absolute;
+    top: .6em;
+    left: 0.7em;
 }
 
-code {
-  display: block;
-  padding: 1em;
-}
+
+
+/* TESTING */
